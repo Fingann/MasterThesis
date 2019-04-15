@@ -20,5 +20,12 @@ namespace Common
                 TypeNameHandling = TypeNameHandling.All
             });
         }
+        public static object DeserializeToObject(string item)
+        {
+            return JsonConvert.DeserializeObject(item, new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.All
+            });
+        }
     }
 }

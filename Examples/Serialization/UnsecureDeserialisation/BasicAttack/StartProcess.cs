@@ -2,11 +2,11 @@ using System;
 
 namespace InsecureGuard.Bad
 {
-    public class StartProcessBad
+    public class StartProcess
     {
         public string Cmd { get; set; }
         
-        public StartProcessBad(string cmd)
+        public StartProcess(string cmd)
         {
             if (cmd != "calc.exe") 
                 throw new ArgumentException("Cmd is not calc.exe");
@@ -14,9 +14,14 @@ namespace InsecureGuard.Bad
             Cmd = cmd;
         }
         
-        public StartProcessBad()
+        public StartProcess()
         {
             Console.WriteLine("Default - Ctor");
+        }
+
+        public void Start()
+        {
+            Console.WriteLine("Starting process: "+ Cmd);
         }
 
        
